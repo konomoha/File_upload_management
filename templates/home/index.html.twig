@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <nav class="navbar navbar-light">
+
+            <h1 class="text-center text-light fst-italic">File upload management</h1>
+        
+        </nav>
+
+        <div class="form_conteneur">
+        
+            {{ form_start(form) }}
+
+                <div class='form-group col-8'>
+                    {{form_label(form.fileUpload)}}
+                    {{ form_widget(form.fileUpload, {'attr': {'class': 'form-control mt-3'}})}}
+                </div>
+
+                <div class="btn_form col-3">
+                    <button type="submit" class="btn btn-success col-10">Upload</button>
+                </div>
+            {{ form_end(form) }}
+        </div>
+
+        <div class='col-6 m-auto'>
+            <table class='table table-hover'>
+                <tbody id="bloc_files"></tbody>
+            </table>
+        </div>
+
+    </div>
+{% endblock %}
